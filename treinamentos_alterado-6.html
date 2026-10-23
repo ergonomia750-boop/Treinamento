@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Treinamentos — Portal Segurança</title>
+<meta name="description" content="Treinamentos de segurança do trabalho por área: conteúdo e perguntas.">
+<meta name="theme-color" content="#004a8f">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap">
+<style>
+:root{--azul:#004a8f;--azul-esc:#00305f;--azul-cl:#e8f0f9;--vermelho:#e30613;--fundo:#f1f4f8;--linha:#d9e0ea;--texto:#1c2b3d;--suave:#566478;--sf:#fff;--topo:#004a8f;--btn:#004a8f;--btn-t:#fff}
+html.contraste{--azul:#ffd400;--azul-esc:#fff;--azul-cl:#1a1a1a;--fundo:#000;--linha:#fff;--texto:#fff;--suave:#e6e6e6;--vermelho:#ff6b6b;--sf:#000;--topo:#000;--btn:#ffd400;--btn-t:#000}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Open Sans','Segoe UI',Roboto,Arial,sans-serif}
+body{background:var(--fundo);color:var(--texto);line-height:1.5;padding-bottom:86px;min-height:100vh;display:flex;flex-direction:column}
+body.trava{overflow:hidden}.hidden{display:none!important}
+.in{max-width:880px;margin:0 auto;padding:0 16px}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#00305f;padding:10px 16px;font-weight:700;z-index:100}.skip:focus{left:0}
+.topo{position:sticky;top:0;z-index:20;background:var(--topo);color:#fff;border-bottom:4px solid var(--vermelho)}
+.topo .in{display:flex;align-items:center;gap:12px;height:58px}
+.marca{display:flex;align-items:center;gap:9px}.marca::before{content:'';width:5px;height:24px;background:var(--vermelho)}
+.marca-nome{font-size:1.35rem;font-weight:800;letter-spacing:.04em;line-height:1}
+.topo-t{flex:1;min-width:0;font-size:.82rem;font-weight:700;letter-spacing:.08em;color:#fff;border-left:1px solid rgba(255,255,255,.45);padding-left:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn-aa,.voltar{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:10px;height:42px;min-width:50px;padding:0 14px;font-weight:700;font-size:1rem;cursor:pointer}
+.acess-p{position:absolute;right:16px;top:62px;background:var(--sf);color:var(--texto);border:1px solid var(--linha);border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(0,48,95,.25);display:flex;flex-direction:column;gap:10px;min-width:240px}
+.acess-p .lin{display:flex;gap:8px}.acess-p b{font-size:.8rem;color:var(--suave)}
+.acess-p button{flex:1;height:44px;border:1px solid var(--linha);background:var(--sf);color:var(--texto);border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer}
+.acess-p button:disabled{opacity:.4}.acess-p button[aria-pressed="true"]{background:var(--btn);color:var(--btn-t)}
+main{flex:1;width:100%;max-width:880px;margin:0 auto;padding:0 16px}
+.pagina{display:none;padding-top:18px}.pagina.on{display:block}
+.ph h1{font-size:1.55rem;line-height:1.2;color:var(--azul-esc)}.ph p{color:var(--suave);margin:6px 0 16px}
+.banner{background:var(--topo);color:#fff;border-radius:16px;padding:24px 22px;margin-bottom:18px}
+.banner h1{font-size:1.5rem;line-height:1.25}.banner p{margin-top:8px;color:#d6e4f5}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{display:flex;flex-direction:column;gap:10px;background:var(--sf);border:1px solid var(--linha);border-radius:16px;padding:16px;min-height:130px;text-decoration:none;color:var(--texto);text-align:left;cursor:pointer;font:inherit;width:100%;box-shadow:0 2px 6px rgba(0,48,95,.06);transition:transform .15s,box-shadow .15s}
+.tile:hover{box-shadow:0 6px 16px rgba(0,48,95,.14)}.tile:active{transform:scale(.98)}
+.tile i{font-style:normal;font-size:1.6rem;width:48px;height:48px;border-radius:12px;background:var(--azul-cl);display:flex;align-items:center;justify-content:center}
+.tile strong{color:var(--azul-esc);font-size:1.02rem;line-height:1.2}.tile span{font-size:.82rem;color:var(--suave);line-height:1.35}
+.sub-t{font-size:1.05rem;color:var(--azul-esc);margin:26px 0 10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{background:var(--sf);border:1px solid var(--azul);color:var(--azul);border-radius:999px;padding:11px 18px;font-weight:700;font-size:.92rem;text-decoration:none}
+.ck{list-style:none;background:var(--sf);border:1px solid var(--linha);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.ck li{padding:14px 16px 14px 52px;position:relative;border-top:1px solid var(--linha);font-size:.94rem;line-height:1.55}.ck li:first-child{border-top:none}
+.ck li::before{content:'✓';position:absolute;left:14px;top:14px;width:24px;height:24px;border-radius:50%;background:var(--vermelho);color:#fff;font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ck strong{color:var(--azul-esc)}
+.seg{display:flex;gap:8px;overflow-x:auto;padding:2px 0 14px;scrollbar-width:none}
+.seg button{flex:0 0 auto;background:var(--sf);border:1px solid var(--linha);color:var(--suave);border-radius:999px;padding:11px 18px;font-weight:700;font-size:.92rem;cursor:pointer;white-space:nowrap}
+.seg button[aria-selected="true"]{background:var(--btn);color:var(--btn-t);border-color:var(--btn)}
+.dois{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-bottom:6px}
+.info{background:var(--azul-cl);border-radius:12px;padding:12px 14px;font-size:.92rem;line-height:1.5}.info b{display:block;font-size:.76rem;color:var(--suave);margin-bottom:2px}
+.tp{display:none}.tp.on{display:block}
+.acc{background:var(--sf);border:1px solid var(--linha);border-radius:14px;margin-bottom:10px}
+.acc summary{padding:16px 18px;font-weight:700;color:var(--azul-esc);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.acc summary::-webkit-details-marker{display:none}.acc summary::after{content:'+';font-size:1.4rem;line-height:1;color:var(--azul)}.acc[open] summary::after{content:'−'}
+.acc .corpo{padding:0 18px 16px;line-height:1.65}.acc ul,.acc ol{padding-left:20px}.acc li{margin-bottom:6px}
+.nota{font-size:.85rem;color:var(--suave);margin:4px 0 14px}
+.tarja{background:#fff8e1;color:#4a3b00;border:1px solid #f0d58a;border-left:5px solid #f2b705;border-radius:12px;padding:12px 14px;margin-bottom:16px;font-size:.9rem}
+.aviso{margin-top:18px;padding:12px 14px;background:var(--azul-cl);border-left:4px solid var(--azul);border-radius:10px;font-size:.88rem}
+.epi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.epi-card{--c:#004a8f;appearance:none;background:var(--sf);color:var(--texto);border:1px solid var(--linha);border-radius:16px;padding:22px 8px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;text-align:center;position:relative;overflow:hidden;width:100%;min-height:150px;font-size:1rem}
+.epi-card::before{content:'';position:absolute;inset:0 0 auto;height:5px;background:var(--c)}.epi-card:active{transform:scale(.98)}
+.epi-card .icon{font-size:1.9rem;width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:var(--azul-cl)}
+@supports(background:color-mix(in srgb,red 10%,white)){.epi-card .icon{background:color-mix(in srgb,var(--c) 13%,var(--sf))}}
+.epi-card .title{font-size:.92rem;font-weight:700;line-height:1.25}.epi-card .risco-tag{order:3;font-size:.72rem;font-weight:700;color:var(--c)}
+.epi-card[data-risco="fisico"]{--c:#2e7d32}.epi-card[data-risco="quimico"]{--c:#c62828}.epi-card[data-risco="biologico"]{--c:#6d4c41}.epi-card[data-risco="mecanico"]{--c:#1565c0}.epi-card[data-risco="multiplo"]{--c:#6a1b9a}
+html.contraste .epi-card .risco-tag{color:#fff}
+.painel{display:none;position:fixed;inset:0;z-index:30;background:var(--fundo);overflow-y:auto}.painel.aberto{display:block}
+.p-top{position:sticky;top:0;z-index:2;background:var(--topo);color:#fff;border-bottom:4px solid var(--cor-risco,var(--vermelho))}
+.p-top .in{display:flex;align-items:center;gap:12px;height:58px}.p-top strong{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.p-corpo{max-width:880px;margin:0 auto;padding:18px 16px 120px}
+.d-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.icone-grande{font-size:2.2rem;width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--azul-cl)}
+.d-head h2{flex:1;min-width:160px;font-size:1.35rem;line-height:1.2;color:var(--azul-esc)}
+.risco-badge{padding:5px 14px;border-radius:999px;font-weight:700;color:#fff;font-size:.8rem}
+.d-desc{line-height:1.65;margin-bottom:14px}
+.topico-conteudo{background:var(--sf);border:1px solid var(--linha);border-left:5px solid var(--cor-risco,var(--azul));border-radius:12px;padding:16px 18px;line-height:1.7;min-height:130px;margin-bottom:18px}
+.topico-conteudo h3{font-size:1.05rem;color:var(--azul-esc);margin-bottom:8px}.topico-conteudo ul{padding-left:20px}.topico-conteudo li{margin-bottom:6px}
+.btn-video{display:flex;justify-content:center;align-items:center;gap:10px;background:var(--btn);color:var(--btn-t);padding:15px 22px;border-radius:12px;font-weight:700;text-decoration:none;border:none;width:100%;font-size:1rem;cursor:pointer}
+.abas-baixo{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--sf);border-top:1px solid var(--linha);box-shadow:0 -4px 16px rgba(0,48,95,.1);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)}
+.abas-baixo>*{flex:1;max-width:170px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 2px 8px;background:none;border:none;border-top:3px solid transparent;color:var(--suave);text-decoration:none;font:inherit;font-size:.68rem;font-weight:700;cursor:pointer}
+.abas-baixo i{font-style:normal;font-size:1.4rem;line-height:1}.abas-baixo [aria-current="page"]{color:var(--azul-esc);border-top-color:var(--vermelho)}
+.veu{position:fixed;inset:0;background:rgba(0,48,95,.55);z-index:40}
+.gaveta{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);background:var(--sf);z-index:50;transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;border-top:5px solid var(--vermelho);visibility:hidden;overflow-y:auto}
+.gaveta.aberta{transform:none;visibility:visible}
+.g-top{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--linha);color:var(--azul-esc)}
+.g-top button{background:none;border:none;font-size:1.3rem;color:var(--suave);cursor:pointer;padding:8px 12px}
+.gaveta a,.gaveta .item{padding:17px 22px;color:var(--texto);text-decoration:none;font:inherit;font-weight:600;border:none;border-left:5px solid transparent;border-bottom:1px solid var(--linha);background:none;text-align:left;cursor:pointer}
+.gaveta [aria-current="page"]{border-left-color:var(--vermelho);background:var(--azul-cl);color:var(--azul-esc)}
+.form label{display:block;font-weight:600;font-size:.9rem;margin:12px 0 6px;color:var(--azul-esc)}
+.form input,.form textarea{width:100%;padding:13px;border:1px solid #aab6c6;border-radius:10px;font-size:1rem;background:var(--sf);color:var(--texto)}
+.form textarea{margin-bottom:16px;resize:vertical}
+.curso-conteudo{max-width:760px;margin:6px 0 26px}.curso-conteudo h2{font-size:1.2rem;line-height:1.35;color:var(--azul-esc);font-weight:700;margin:0 0 16px}.curso-texto{font-size:1rem;line-height:1.8;color:var(--texto);cursor:default;caret-color:transparent}.curso-texto p{margin:0 0 16px}.curso-texto p:last-child{margin-bottom:0}
+.doc{background:var(--sf);border:1px solid var(--linha);border-top:6px solid var(--azul);border-radius:12px;padding:24px 20px;line-height:1.7;margin-top:14px}
+.doc p,.doc ul{margin-bottom:14px}.doc ul{padding-left:22px}
+.doc-marca{display:flex;align-items:center;gap:9px;font-size:1.3rem;font-weight:800;letter-spacing:.04em;color:var(--azul);margin-bottom:12px}.doc-marca::before{content:'';width:5px;height:22px;background:var(--vermelho)}
+.doc-n{font-weight:700;color:var(--azul-esc);border-bottom:2px solid var(--vermelho);padding-bottom:8px}
+.doc-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 20px;margin:14px 0 18px;font-size:.92rem}
+.doc-meta dt{font-size:.78rem;font-weight:600;color:var(--suave)}.doc-meta dd{font-weight:600}.assin{margin-top:26px}
+.rodape{text-align:center;color:#5f6368;font-size:.78rem;padding:24px 16px 70px}.rodape p{margin-bottom:8px}
+.lk{background:none;border:none;color:#5f6368;font:inherit;font-size:.78rem;margin:0 8px;cursor:pointer;text-decoration:none}.lk:hover{text-decoration:underline}
+html.contraste .lk,html.contraste .rodape{color:#fff}
+dialog.dlg{border:none;border-top:5px solid var(--vermelho);border-radius:16px;padding:26px 24px;max-width:520px;width:calc(100vw - 32px);margin:auto;background:var(--sf);color:var(--texto)}
+dialog.dlg::backdrop{background:rgba(0,48,95,.6)}.dlg h2{color:var(--azul-esc);font-size:1.3rem;margin-bottom:12px}.dlg p{line-height:1.7;margin-bottom:14px}.dlg .autoria{font-weight:700;color:var(--azul)}
+.dlg-fechar{background:var(--btn);color:var(--btn-t);border:none;border-radius:10px;padding:12px 26px;font-weight:700;font-size:1rem;cursor:pointer}
+:focus-visible{outline:3px solid var(--azul);outline-offset:2px}.topo :focus-visible,.p-top :focus-visible{outline-color:#fff}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}.epi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media print{body *{visibility:hidden}.doc,.doc *{visibility:visible}.doc{position:absolute;left:0;top:0;width:100%;border:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.area-b{background:var(--sf);border:1px solid var(--linha);border-radius:14px;padding:16px 6px;min-height:60px;font:inherit;font-size:.98rem;font-weight:700;color:var(--azul-esc);cursor:pointer;overflow-wrap:anywhere}
+.area-b[aria-pressed="true"]{background:var(--btn);color:var(--btn-t);border-color:var(--btn)}
+.area-det{scroll-margin-top:72px;background:var(--sf);border:1px solid var(--linha);border-top:5px solid var(--azul);border-radius:16px;padding:18px}
+.area-det h3{font-size:1.2rem;color:var(--azul-esc);margin-bottom:12px}.area-det .ck{margin-bottom:14px}
+@media(min-width:700px){.areas{grid-template-columns:repeat(4,minmax(0,1fr))}}
+html{scroll-padding-top:72px}
+button,a,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.seg button,.chip{min-height:48px;display:inline-flex;align-items:center}
+.btn-video{min-height:54px}
+.area-b:active,.chip:active,.btn-video:active,.seg button:active,.btn-sec:active{transform:scale(.97)}
+.btn-sec{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:10px;background:var(--sf);border:1.5px solid var(--azul);color:var(--azul);border-radius:12px;font:inherit;font-weight:700;font-size:.98rem;cursor:pointer}
+.voz-fab{position:fixed;right:14px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:35;display:flex;align-items:center;gap:8px;min-height:56px;padding:0 20px;border:none;border-radius:999px;background:var(--btn);color:var(--btn-t);font:inherit;font-weight:700;font-size:1rem;box-shadow:0 6px 20px rgba(0,48,95,.35);cursor:pointer}
+.voz-fab.ouvindo{background:var(--vermelho);color:#fff;animation:pulsa 1.2s infinite}
+@keyframes pulsa{from{box-shadow:0 0 0 0 rgba(227,6,19,.55)}to{box-shadow:0 0 0 18px rgba(227,6,19,0)}}
+.voz-p{position:fixed;right:14px;bottom:calc(156px + env(safe-area-inset-bottom,0px));z-index:36;width:min(380px,calc(100vw - 28px));background:var(--sf);color:var(--texto);border:1px solid var(--linha);border-radius:18px;padding:14px;box-shadow:0 14px 40px rgba(0,48,95,.3);display:flex;flex-direction:column;gap:10px}
+.voz-top{display:flex;justify-content:space-between;align-items:center;color:var(--azul-esc)}
+.voz-top button{background:none;border:none;font-size:1.3rem;color:var(--suave);cursor:pointer;padding:6px 10px;min-height:44px}
+.voz-b{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 14px;background:var(--sf);border:1.5px solid var(--azul);color:var(--azul-esc);border-radius:14px;font:inherit;font-weight:700;cursor:pointer;text-align:left;width:100%}
+.voz-b.pri{background:var(--btn);color:var(--btn-t);border-color:var(--btn)}
+.voz-b .ic{font-size:1.5rem;line-height:1}.voz-b small{display:block;font-size:.78rem;font-weight:400}
+.voz-b.ditar{justify-content:center;min-height:48px;margin:0 0 6px}
+.voz-st{font-size:.88rem;color:var(--suave);min-height:1.4em;line-height:1.4}
+.voz-chips{display:flex;flex-wrap:wrap;gap:8px}
+.voz-chips button{min-height:44px;padding:0 14px;border-radius:999px;background:var(--azul-cl);color:var(--azul-esc);border:1px solid var(--linha);font:inherit;font-weight:700;font-size:.85rem;cursor:pointer}
+.voz-toast{position:fixed;right:14px;bottom:calc(156px + env(safe-area-inset-bottom,0px));z-index:36;max-width:min(380px,calc(100vw - 28px));background:var(--topo);color:#fff;border-radius:12px;padding:11px 15px;font-size:.9rem;box-shadow:0 8px 24px rgba(0,48,95,.3)}
+.voz-fab:focus-visible,.voz-b:focus-visible,.voz-chips button:focus-visible{outline:3px solid var(--azul);outline-offset:3px}
+html.contraste .voz-toast{border:2px solid #ffd400}
+.sienna-oculto{display:none!important}
+.tile .st{display:block;font-size:.78rem;font-weight:700;color:var(--azul);margin-top:auto}
+.volt{width:auto;display:inline-flex;padding:0 18px;margin-bottom:4px;text-decoration:none}
+.perg{border:1px solid var(--linha);border-radius:16px;background:var(--sf);padding:16px;margin-bottom:14px}
+.qt{font-weight:700;color:var(--azul-esc);line-height:1.45}
+.op{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 14px;border:1.5px solid var(--linha);border-radius:12px;margin-top:8px;cursor:pointer;background:var(--sf);line-height:1.4}
+.op input{width:22px;height:22px;flex:none;accent-color:var(--azul)}
+.op:has(input:checked){border-color:var(--azul);background:var(--azul-cl)}
+.op.certa{border-color:#2e7d32;background:#e8f5e9;color:#1b5e20}.op.errada{border-color:#c62828;background:#fdecea;color:#7f1d1d}
+html.contraste .op.certa{background:#000;border-color:#7CFC00;color:#fff}html.contraste .op.errada{background:#000;border-color:#ff6b6b;color:#fff}
+.gab{font-size:.9rem;margin-top:10px;padding:10px 12px;background:var(--azul-cl);border-radius:10px;line-height:1.5}
+.res{background:var(--sf);border:1px solid var(--linha);border-top:5px solid var(--azul);border-radius:16px;padding:18px;margin-bottom:16px}
+.res h3{color:var(--azul-esc);font-size:1.1rem}.res .big{font-size:2rem;font-weight:800;color:var(--azul-esc)}
+.bp{height:8px;border-radius:99px;background:var(--linha);overflow:hidden;margin:8px 0 10px}.bp i{display:block;height:100%;background:var(--azul)}
+.fim{display:grid;gap:10px;margin-top:14px}.fim a.btn-sec{text-decoration:none}
+</style>
+</head>
+<body contenteditable="false">
+<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+<a class="skip" id="skip" href="#conteudo">Ir para o conteúdo</a>
+<header class="topo"><div class="in"><div class="marca"><span class="marca-nome">SENAI</span></div><span class="topo-t" id="topoT">PORTAL SEGURANÇA</span>
+<button class="btn-aa" id="btnAa" type="button" aria-expanded="false" aria-controls="acessP" aria-label="Acessibilidade: tamanho do texto e contraste">Aa</button></div>
+<div class="acess-p hidden" id="acessP"><b>Tamanho do texto</b><div class="lin"><button id="aMenos" type="button" aria-label="Diminuir texto">A−</button><button id="aPadrao" type="button" aria-label="Texto padrão">A</button><button id="aMais" type="button" aria-label="Aumentar texto">A+</button></div><b>Contraste</b><button id="btnContraste" type="button" aria-pressed="false">Alto contraste</button><b>Mais opções</b><button id="btnSienna" type="button" aria-pressed="false">Abrir Sienna</button></div></header>
+<main id="conteudo">
+<section class="pagina on" id="p-home">
+<header class="ph"><h1>Treinamentos</h1><p>Escolha um curso para ler o conteúdo e responder às perguntas.</p></header>
+<div class="tiles" id="tiles"></div>
+</section>
+<section class="pagina" id="p-area">
+<a class="btn-sec volt" href="#inicio" data-go="inicio">← Todos os treinamentos</a>
+<header class="ph"><h1 id="aNome"></h1></header>
+<div class="seg" id="abasArea" role="tablist" aria-label="Conteúdo e perguntas"><button role="tab" data-t="conteudo" aria-selected="true" type="button">Conteúdo</button><button role="tab" data-t="perguntas" aria-selected="false" tabindex="-1" type="button">Perguntas</button></div>
+<div class="tp on" id="tpConteudo" role="tabpanel"></div>
+<div class="tp" id="tpPerg" role="tabpanel">
+<p class="nota" id="prog" role="status"></p>
+<div class="res hidden" id="res" tabindex="-1" role="status"><h3>Resultado da avaliação</h3><p class="big" id="resBig"></p><div class="bp"><i id="resBar"></i></div><p id="resMsg"></p></div>
+<div id="perg"></div>
+<button class="btn-video" id="btnFinal" type="button">Finalizar avaliação</button>
+<div class="fim hidden" id="fimBotoes"><button class="btn-video" id="btnRefazer" type="button">Refazer a avaliação</button><button class="btn-sec" id="btnRevisar" type="button">Revisar o conteúdo</button><a class="btn-sec" href="#inicio" data-go="inicio">Escolher outro treinamento</a></div>
+</div>
+</section>
+</main>
+<footer class="rodape"><button class="lk" id="btnSobre" type="button">Sobre o site</button><a class="lk" href="index.html">Portal Segurança</a><button class="lk" id="btnTopo" type="button">Voltar ao topo</button></footer>
+<button class="voz-fab" id="vozFab" type="button" aria-expanded="false" aria-controls="vozP"><span aria-hidden="true">🎤</span> Voz</button>
+<section class="voz-p hidden" id="vozP" role="dialog" aria-label="Voz: comandos e leitura em voz alta">
+<div class="voz-top"><strong>Voz</strong><button type="button" id="vozX" aria-label="Fechar">✕</button></div>
+<button class="voz-b pri" id="vozFalar" type="button"><span class="ic" aria-hidden="true">🎤</span><span><span id="vozFalarT">Falar um comando</span><small>Ex.: “soldagem”, “perguntas”, “ler”</small></span></button>
+<button class="voz-b" id="vozOuvir" type="button"><span class="ic" id="vozOuvirI" aria-hidden="true">🔊</span><span id="vozOuvirT">Ouvir esta página</span></button>
+<button class="voz-b" id="vozLibras" type="button"><span class="ic" aria-hidden="true">🤟</span><span><span>Assistente de Libras</span><small>Abre o VLibras</small></span></button>
+<p class="voz-st" id="vozSt" role="status">Toque em “Falar um comando” ou escolha um atalho.</p>
+<div class="voz-chips" aria-label="Atalhos"><button type="button" data-c="soldagem">Soldagem</button><button type="button" data-c="eletrica">Elétrica</button><button type="button" data-c="perguntas">Perguntas</button><button type="button" data-c="conteudo">Conteúdo</button><button type="button" data-c="ler">Ler esta página</button><button type="button" data-c="libras">Libras</button></div>
+</section>
+<div class="voz-toast hidden" id="vozToast" role="status" aria-live="polite"></div>
+<dialog class="dlg" id="dlgSobre" aria-labelledby="sobreTitulo"><h2 id="sobreTitulo">Sobre o site</h2><p>Este site reúne treinamentos de segurança do trabalho por área, com conteúdo e perguntas, para apoiar o uso correto e seguro dos equipamentos e dos procedimentos.</p><p class="autoria">Desenvolvimento: Turma Técnico em Segurança do Trabalho.</p><button class="dlg-fechar" id="btnFecharSobre" type="button">Fechar</button></dialog>
+<div class="veu hidden" id="veu"></div>
+<nav class="gaveta" id="gaveta" aria-label="Treinamentos" inert><div class="g-top"><strong>Treinamentos</strong><button type="button" id="btnFecharMenu" aria-label="Fechar menu">✕</button></div></nav>
+<nav class="abas-baixo" aria-label="Navegação principal"><a href="#inicio" data-go="inicio"><i>🎓</i>Treinamentos</a><a href="index.html"><i>🏠</i>Portal</a><button id="btnMenu" type="button" aria-expanded="false" aria-controls="gaveta"><i>☰</i>Menu</button></nav>
+<script>
+document.designMode='off';
+document.body.contentEditable='false';
+const $=id=>document.getElementById(id);
+const T={"soldagem": {"nome": "Soldagem", "ic": "🔥", "intro": "A soldagem expõe o trabalhador a radiação, calor, faíscas e fumos. Este treinamento apresenta como se proteger e como preparar a área antes de iniciar a operação.", "riscos": "Radiação (UV e IV), luminosidade, faíscas e respingos, fumos metálicos e calor.", "epis": "Máscara de solda, avental e luva de raspa, perneira, botina e respirador, conforme o processo.", "proc": ["Inspecionar os EPIs e a lente da máscara antes de cada jornada.", "Manter a área ventilada e livre de materiais inflamáveis.", "Usar os EPIs do início ao fim da operação.", "Sinalizar ou isolar a área para proteger quem está por perto."], "obs": "", "q": [["Antes de cada jornada de solda, o que deve ser feito?", "Inspecionar os EPIs e a lente da máscara", "Começar direto o trabalho", "Retirar a máscara para enxergar melhor", "Dispensar o avental se a peça for pequena", "Os EPIs e a lente devem ser inspecionados antes de cada jornada."], ["Qual é o cuidado correto com o ambiente de solda?", "Manter a área ventilada e livre de materiais inflamáveis", "Deixar solventes por perto", "Fechar o ambiente para conter a fumaça", "Soldar sobre materiais combustíveis", "A ventilação e a ausência de materiais inflamáveis reduzem os riscos de fumos e incêndio."], ["Durante quanto tempo os EPIs devem ser usados?", "Do início ao fim da operação", "Somente ao abrir o arco", "Apenas quando há supervisor", "Só nas primeiras peças", "A exposição ocorre durante toda a operação."], ["Como proteger as pessoas que estão por perto?", "Sinalizar ou isolar a área", "Avisar só depois de soldar", "Pedir que os colegas apenas desviem o olhar", "Nada, pois o risco é só do soldador", "A radiação e as faíscas atingem quem está próximo."]]}, "mecanica": {"nome": "Mecânica", "ic": "🔧", "intro": "A mecânica envolve ferramentas, equipamentos e contato com óleos e solventes. Este treinamento orienta o uso correto das ferramentas e os cuidados antes e depois da manutenção.", "riscos": "Impactos, cortes, partículas, ruído e contato com óleos e solventes.", "epis": "Óculos de proteção, luvas adequadas à tarefa, protetor auricular e botina.", "proc": ["Usar ferramentas adequadas e em bom estado.", "Seguir o procedimento da empresa para desligar e bloquear o equipamento antes da manutenção.", "Manter bancada e piso organizados e limpos.", "Descartar óleos e resíduos conforme o procedimento da empresa."], "obs": "", "q": [["Antes de uma manutenção, o que fazer com o equipamento?", "Seguir o procedimento da empresa para desligar e bloquear", "Mantê-lo ligado para testar", "Apenas avisar um colega", "Retirar as proteções para facilitar", "O bloqueio evita o acionamento acidental durante a manutenção."], ["Quais ferramentas devem ser usadas?", "Ferramentas adequadas e em bom estado", "Qualquer ferramenta disponível", "Ferramentas danificadas, se forem rápidas", "Ferramentas emprestadas sem verificar", "Ferramentas inadequadas ou danificadas aumentam o risco de acidentes."], ["Quais são os EPIs usuais da mecânica?", "Óculos, luvas adequadas, protetor auricular e botina", "Apenas luvas", "Nenhum EPI, se a tarefa for rápida", "Somente protetor auricular", "Os riscos incluem impactos, cortes, partículas e ruído."], ["O que fazer com óleos e resíduos?", "Descartar conforme o procedimento da empresa", "Despejar no ralo", "Deixar no piso", "Misturar ao lixo comum", "O descarte correto evita contaminação e acidentes."]]}, "usinagem": {"nome": "Usinagem", "ic": "⚙️", "intro": "A usinagem trabalha com máquinas de partes móveis e geração de cavacos. Este treinamento reforça as verificações antes de operar e os cuidados com cavacos e partes giratórias.", "riscos": "Projeção de cavacos, partes móveis, ruído e fluidos de corte.", "epis": "Óculos de proteção, protetor auricular e botina.", "proc": ["Verificar se as proteções da máquina estão no lugar antes de operar.", "Fixar corretamente a peça e a ferramenta.", "Remover cavacos com ferramenta apropriada, nunca com as mãos.", "Evitar luvas soltas, mangas largas e adornos perto de partes giratórias; manter os cabelos presos."], "obs": "", "q": [["O que verificar antes de operar a máquina?", "Se as proteções estão no lugar", "Se há música ligada", "Nada, apenas ligar", "Se as proteções foram retiradas", "As proteções reduzem o contato com partes móveis e a projeção de cavacos."], ["Como remover os cavacos?", "Com ferramenta apropriada, nunca com as mãos", "Com as mãos, rapidamente", "Soprando com a boca", "Esperando acumular", "O cavaco é cortante e pode estar quente."], ["O que evitar perto de partes giratórias?", "Luvas soltas, mangas largas e adornos", "Óculos de proteção", "Botina", "Cabelos presos", "Esses itens podem ser puxados pela máquina."], ["Como deve ser a fixação da peça e da ferramenta?", "Corretamente fixadas antes de operar", "Seguradas com a mão", "Fixadas depois de ligar", "Não precisam ser fixadas", "Peça ou ferramenta solta pode ser projetada."]]}, "tornearia": {"nome": "Tornearia", "ic": "🛠️", "intro": "O torno mantém a peça em rotação e gera cavacos. Este treinamento mostra como preparar a máquina, o que não vestir e quando parar o equipamento.", "riscos": "Cavacos, peça em rotação, ruído e fluido de corte.", "epis": "Óculos de proteção, protetor auricular e botina.", "proc": ["Não usar luvas, mangas soltas ou adornos ao operar o torno.", "Conferir a fixação da peça e retirar a chave da placa antes de ligar.", "Parar o torno antes de medir a peça ou remover cavacos.", "Manter os cabelos presos e a área de trabalho limpa."], "obs": "", "q": [["Ao operar o torno, luvas, mangas soltas e adornos…", "Não devem ser usados", "Podem ser usados", "Só em peças pequenas", "Só com supervisão", "Podem ser enroscados pela peça em rotação."], ["O que fazer antes de ligar o torno?", "Conferir a fixação da peça e retirar a chave da placa", "Deixar a chave na placa", "Ligar para testar", "Apertar a peça só com a mão", "A chave esquecida na placa pode ser projetada."], ["Quando medir a peça ou remover cavacos?", "Com o torno parado", "Com o torno em rotação", "Reduzindo apenas a rotação", "Usando luvas", "Com a máquina parada não há risco de arrastamento."], ["Quais são os EPIs usuais do torno?", "Óculos, protetor auricular e botina", "Somente botina", "Luvas de raspa", "Nenhum", "Os riscos incluem cavacos e ruído."]]}, "metalografia": {"nome": "Metalografia", "ic": "🔬", "intro": "A metalografia utiliza reagentes químicos e etapas de lixamento e polimento. Este treinamento orienta o manuseio seguro dos reagentes, a ventilação e o descarte de resíduos.", "riscos": "Produtos químicos (reagentes), partículas de lixamento e polimento e ruído.", "epis": "Óculos de proteção, luvas adequadas ao reagente, vestimenta compatível e respirador, conforme o agente.", "proc": ["Ler a ficha de segurança (FISPQ) dos reagentes antes de usar.", "Manusear reagentes em local ventilado ou em capela.", "Identificar os frascos e descartar resíduos conforme o procedimento.", "Usar os EPIs durante todo o preparo e o ataque das amostras."], "obs": "", "q": [["O que fazer antes de usar um reagente?", "Ler a ficha de segurança (FISPQ)", "Cheirar para identificar", "Usar sem identificar", "Misturar com outro reagente", "A FISPQ informa os riscos e os cuidados de cada produto."], ["Onde manusear os reagentes?", "Em local ventilado ou em capela", "Em local fechado", "Perto de alimentos", "Em qualquer bancada", "A ventilação reduz a inalação de vapores."], ["Como tratar frascos e resíduos?", "Identificar os frascos e descartar conforme o procedimento", "Dispensar etiquetas", "Descartar na pia", "Guardar sem identificação", "A identificação evita misturas e acidentes."], ["Quando usar os EPIs?", "Durante todo o preparo e o ataque das amostras", "Apenas no ataque químico", "Só ao limpar", "Somente quando houver fiscalização", "A exposição ocorre em todas as etapas."]]}, "costura": {"nome": "Costura", "ic": "🧵", "intro": "Na costura, os riscos mais comuns são perfuração por agulha, cortes e esforço repetitivo. Este treinamento orienta o uso seguro das máquinas e da tesoura, além da postura e das pausas.", "riscos": "Perfuração por agulha, cortes, poeira de tecido e esforço repetitivo.", "epis": "Conforme a avaliação de riscos: luva de proteção contra corte em tesoura ou máquina de corte, óculos e protetor auricular.", "proc": ["Desligar a máquina para trocar a agulha ou passar a linha.", "Manter as proteções da máquina no lugar.", "Cortar com a ferramenta apropriada e guardá-la após o uso.", "Manter a postura adequada e fazer as pausas previstas."], "obs": "", "q": [["O que fazer para trocar a agulha ou passar a linha?", "Desligar a máquina", "Manter a máquina ligada", "Apenas diminuir a velocidade", "Pedir que alguém acione o pedal", "A máquina ligada pode acionar a agulha."], ["Como cortar o tecido ou a linha?", "Com a ferramenta apropriada, guardada após o uso", "Com qualquer objeto", "Deixando a tesoura sobre a máquina", "Com a própria agulha", "Ferramenta adequada reduz cortes."], ["E as proteções da máquina?", "Devem permanecer no lugar", "Podem ser retiradas para trabalhar mais rápido", "Só valem em máquinas novas", "São dispensáveis", "As proteções reduzem o contato com a agulha."], ["Como reduzir o esforço repetitivo?", "Postura adequada e pausas previstas", "Ignorar o desconforto", "Trabalhar sem pausas", "Aumentar o ritmo", "Postura e pausas ajudam a prevenir lesões."]]}, "marcenaria": {"nome": "Marcenaria", "ic": "🔨", "intro": "A marcenaria envolve máquinas de corte, ruído e serragem. Este treinamento reforça as verificações antes de ligar, o uso de dispositivos de apoio e o controle da serragem.", "riscos": "Ruído, serragem, projeção de partículas e cortes.", "epis": "Óculos de proteção, protetor auricular, respirador para pó, botina e luvas apenas quando seguras para a tarefa.", "proc": ["Verificar proteções e lâminas antes de ligar a máquina.", "Usar empurrador ou gabarito, mantendo as mãos longe da lâmina.", "Manter a exaustão ligada e a serragem limpa.", "Não usar luvas ou mangas soltas em máquinas com partes giratórias."], "obs": "", "q": [["O que verificar antes de ligar a máquina?", "Proteções e lâminas", "Nada, apenas ligar", "Só a cor da máquina", "Se a proteção foi retirada", "Lâminas e proteções precisam estar em condição de uso."], ["Como empurrar peças pequenas?", "Com empurrador ou gabarito, mãos longe da lâmina", "Com as mãos perto da lâmina", "Segurando com os dedos", "Sem a proteção", "O empurrador mantém as mãos afastadas."], ["Como controlar a serragem?", "Manter a exaustão ligada e a serragem limpa", "Deixar acumular", "Soprar o pó", "Desligar a exaustão", "O pó em suspensão é prejudicial à saúde."], ["Em máquinas com partes giratórias…", "Não usar luvas ou mangas soltas", "Usar luvas e mangas soltas", "Usar apenas luvas finas", "Usar relógio e pulseiras", "Podem ser puxadas pela máquina."]]}, "eletrica": {"nome": "Elétrica", "ic": "⚡", "intro": "O trabalho com eletricidade exige capacitação específica e procedimentos rigorosos. Este treinamento apresenta as etapas básicas para intervir com segurança em circuitos.", "riscos": "Choque elétrico, arco elétrico e queda.", "epis": "EPIs específicos para eletricidade (como luvas isolantes e calçado adequado), definidos pela avaliação de riscos.", "proc": ["Somente profissionais habilitados e autorizados realizam a intervenção.", "Desenergizar, bloquear e sinalizar o circuito antes de intervir.", "Confirmar a ausência de tensão antes de tocar nos condutores.", "Usar ferramentas isoladas e em bom estado."], "obs": "A atividade com eletricidade exige capacitação específica, conforme a NR-10.", "q": [["Quem pode realizar a intervenção em circuitos?", "Profissionais habilitados e autorizados", "Qualquer pessoa", "O primeiro disponível", "Um aprendiz sozinho", "A atividade exige capacitação específica (NR-10)."], ["O que fazer antes de intervir no circuito?", "Desenergizar, bloquear e sinalizar", "Apenas avisar", "Mantê-lo energizado", "Usar somente luvas", "Evita a energização acidental."], ["O que fazer antes de tocar nos condutores?", "Confirmar a ausência de tensão", "Tocar rapidamente", "Supor que está desligado", "Pedir a alguém que confira depois", "Só a medição confirma que não há tensão."], ["Como devem ser as ferramentas?", "Isoladas e em bom estado", "Quaisquer ferramentas", "Com cabo danificado", "Metálicas sem isolamento", "Ferramentas isoladas reduzem o risco de choque."]]}};
+const Q_EXTRA={"soldagem":[["Qual é um dos riscos da soldagem?","Radiação ultravioleta e infravermelha","Somente risco de escorregamento","Apenas esforço visual sem outros riscos","Nenhum risco se a peça for pequena","A soldagem pode expor a radiação, calor, faíscas e fumos."],["Qual EPI protege o rosto e os olhos contra a radiação do arco?","Máscara de solda com lente adequada","Boné comum","Óculos de sol comuns","Protetor auricular","A máscara de solda com lente apropriada protege os olhos e o rosto."],["Por que manter a área livre de inflamáveis?","Para reduzir o risco de incêndio por faíscas e respingos","Para aumentar a fumaça","Para facilitar o armazenamento de solventes","Porque os inflamáveis melhoram a solda","Faíscas e respingos podem iniciar incêndios."],["O que fazer se um EPI estiver danificado?","Não iniciar usando-o; providenciar substituição conforme orientação da empresa","Usá-lo até o fim do mês","Consertá-lo improvisadamente e continuar","Emprestar para outra pessoa","EPIs danificados podem não oferecer proteção adequada."],["Qual medida ajuda a reduzir a exposição aos fumos metálicos?","Manter ventilação adequada","Fechar toda a ventilação","Ficar com o rosto sobre a fumaça","Desligar a exaustão","Ventilação adequada reduz o acúmulo de fumos."],["Quando os EPIs de soldagem devem ser utilizados?","Durante toda a operação","Somente quando alguém observar","Apenas ao terminar a solda","Só quando a peça estiver fria","Os riscos permanecem ao longo da operação."],["Como evitar que terceiros sejam atingidos por faíscas?","Sinalizar ou isolar a área de trabalho","Deixar a área aberta sem aviso","Pedir que se aproximem para observar","Apagar a iluminação","O isolamento protege quem está nas proximidades."],["Qual item é indicado para proteger as mãos na soldagem?","Luva de raspa adequada à tarefa","Luva de tecido fina","Luva molhada","Nenhuma luva em qualquer situação","A luva de raspa é indicada para proteger contra calor e respingos, conforme a tarefa."],["O avental de raspa serve principalmente para ajudar a proteger contra…","Calor, faíscas e respingos","Ruído","Choque elétrico em qualquer circuito","Vapores sem necessidade de respirador","O avental adequado protege partes do corpo contra calor e respingos."],["O que deve ser feito antes de começar a soldar?","Inspecionar os EPIs e a lente da máscara","Retirar as proteções","Deixar materiais inflamáveis ao lado","Ignorar as condições da área","A inspeção antes da jornada identifica problemas antes da exposição."],["Por que usar botina na área de soldagem?","Para ajudar a proteger os pés contra riscos da atividade","Para substituir a máscara de solda","Para eliminar os fumos","Para evitar a necessidade de isolar a área","A botina integra a proteção dos pés, conforme os riscos da atividade."]],"mecanica":[["Qual risco pode ocorrer na manutenção mecânica?","Cortes e impactos","Somente exposição à luz solar","Apenas risco de afogamento","Nenhum risco com ferramentas","Ferramentas e componentes podem causar cortes e impactos."],["Por que desligar e bloquear o equipamento?","Para evitar acionamento acidental durante a manutenção","Para aumentar a velocidade","Para permitir que qualquer pessoa ligue","Para dispensar a verificação da área","O bloqueio evita energização ou acionamento inesperado."],["O que fazer se uma ferramenta estiver danificada?","Separá-la de uso e seguir o procedimento da empresa","Usá-la com mais força","Emprestá-la sem avisar","Retirar a proteção da ferramenta","Ferramentas danificadas aumentam a chance de acidente."],["Como deve ficar a bancada de trabalho?","Organizada e limpa","Com peças espalhadas nas bordas","Coberta de óleo","Com ferramentas bloqueando a passagem","Organização reduz tropeços e facilita o trabalho seguro."],["Qual EPI ajuda a proteger os olhos contra partículas?","Óculos de proteção","Avental comum","Protetor auricular","Botina","Óculos de proteção ajudam a evitar lesões por partículas."],["O protetor auricular é usado para reduzir a exposição a…","Ruído","Óleo na pele","Cortes nas mãos","Partículas nos olhos","O ruído é um dos riscos citados para a mecânica."],["Como descartar óleo usado?","Conforme o procedimento da empresa","No ralo","No solo","Em qualquer recipiente sem identificação","O descarte correto evita contaminação e riscos."],["Por que usar luvas adequadas à tarefa?","Para oferecer proteção compatível com o risco sem criar riscos adicionais","Porque qualquer luva serve para toda máquina","Para substituir todas as outras proteções","Para manusear equipamentos ligados sem avaliação","A luva deve ser escolhida de acordo com a tarefa e seus riscos."],["O que fazer antes de iniciar uma manutenção?","Seguir o procedimento de desligamento e bloqueio","Começar com o equipamento funcionando","Retirar as proteções e não avisar ninguém","Usar apenas uma ferramenta qualquer","A preparação segura precede a intervenção."],["Qual combinação de EPIs aparece no treinamento de mecânica?","Óculos, luvas adequadas, protetor auricular e botina","Somente máscara de solda","Apenas avental de raspa","Somente capacete","Esses EPIs correspondem aos riscos indicados para a atividade."],["Por que limpar o piso e remover derramamentos?","Para reduzir escorregões e manter a área segura","Para esconder o vazamento","Para espalhar o óleo por igual","Porque resíduos não oferecem risco","Óleo e desorganização podem causar acidentes."]],"usinagem":[["Qual é o risco associado aos cavacos?","Podem cortar ou estar quentes","São sempre macios e inofensivos","Eliminam o risco de partículas","Servem como proteção das mãos","Cavacos podem ser cortantes e estar quentes."],["Antes de operar, como deve estar a peça?","Corretamente fixada","Segurada com a mão","Solta para se ajustar sozinha","Fixada somente depois de ligar","A fixação evita que a peça seja projetada."],["O que fazer com a ferramenta de corte antes de iniciar?","Garantir que esteja corretamente fixada","Deixá-la solta","Segurá-la manualmente durante a operação","Ajustá-la com a máquina em movimento","A ferramenta deve ser fixada antes de operar."],["Como remover cavacos da máquina?","Usar uma ferramenta apropriada com a máquina em condição segura","Usar as mãos","Usar a roupa para varrer","Aproximar o rosto para soprar","Nunca se deve remover cavacos com as mãos."],["Qual vestimenta deve ser evitada perto de partes giratórias?","Mangas largas e adornos","Roupa ajustada e segura","Cabelos presos","Óculos de proteção","Itens soltos podem ser puxados pelas partes giratórias."],["O que fazer com cabelos compridos durante a usinagem?","Mantê-los presos","Deixá-los soltos","Aproximá-los da máquina para enxergar","Cobri-los com adornos soltos","Cabelos soltos podem se enroscar na máquina."],["Por que verificar as proteções da máquina?","Para reduzir contato com partes móveis e projeção de cavacos","Para facilitar o acesso à zona de perigo","Para trabalhar sem óculos","Para aumentar a exposição ao ruído","As proteções ajudam a separar o operador dos perigos."],["Qual EPI ajuda a proteger os olhos na usinagem?","Óculos de proteção","Luvas soltas","Avental de tecido como única proteção","Nenhum EPI","Óculos ajudam a proteger contra partículas projetadas."],["Quando a peça ou ferramenta deve ser fixada?","Antes de ligar a máquina","Depois de começar a usinar","Durante a rotação, com as mãos","Somente se houver vibração","A fixação deve ser conferida antes da operação."],["Qual risco é associado aos fluidos de corte?","Contato com fluidos durante a operação","Radiação de soldagem","Somente perfuração por agulha","Nenhum risco ocupacional","Fluidos de corte estão entre os riscos da usinagem."],["O que fazer se uma proteção estiver fora do lugar?","Não operar até que a condição seja corrigida conforme o procedimento","Operar com cuidado extra","Retirar as demais proteções","Pedir para alguém segurar a proteção","A máquina deve ser operada com as proteções em posição."]],"tornearia":[["Por que retirar a chave da placa antes de ligar o torno?","Para evitar que ela seja projetada","Para aumentar a rotação","Para prender a peça com a mão","Para dispensar a fixação","A chave esquecida pode ser lançada pela rotação."],["O que pode acontecer com adornos perto do torno?","Podem se enroscar na peça em rotação","Protegem contra cavacos","Reduzem o ruído","Impedem o movimento da peça","Adornos podem ser puxados pelas partes giratórias."],["Em que condição medir uma peça no torno?","Com o torno parado","Com a peça em rotação","Com a mão perto da placa em movimento","Sem interromper a operação","A medição deve ocorrer com a máquina parada."],["Qual proteção ocular é indicada?","Óculos de proteção","Óculos escuros comuns","Nenhuma proteção","Apenas protetor auricular","Óculos de proteção ajudam contra cavacos."],["O que fazer se a peça estiver mal fixada?","Corrigir a fixação antes de ligar","Ligar em baixa rotação e observar","Segurá-la com a mão","Continuar e apertar depois","Peças mal fixadas podem se soltar e ser projetadas."],["Como devem ficar os cabelos ao operar o torno?","Presos","Soltos sobre os ombros","Pendurados perto da placa","Presos apenas depois de ligar","Cabelos soltos podem se enroscar."],["Quando remover cavacos?","Com o torno parado","Enquanto a peça gira","Com as mãos durante a rotação","Aproximando a roupa da placa","A máquina parada reduz o risco de arrastamento."],["Quais são riscos típicos da tornearia?","Cavacos, peça em rotação, ruído e fluido de corte","Somente radiação UV","Apenas esforço repetitivo","Somente produtos alimentícios","Esses riscos são os descritos para o torno."],["Qual item não deve ser usado ao operar o torno?","Luvas soltas","Óculos de proteção","Botina","Protetor auricular","Luvas podem ser puxadas pela peça em rotação."],["O que fazer antes de ligar o equipamento?","Conferir a fixação e retirar a chave da placa","Deixar a chave encaixada","Medir a peça em movimento","Retirar os óculos","A conferência prévia evita projeções e outros acidentes."],["Para que serve manter a área limpa?","Para reduzir riscos e facilitar o trabalho seguro","Para deixar cavacos acumulados","Para esconder vazamentos","Para permitir circulação sobre resíduos","A limpeza ajuda a evitar acidentes e manter a organização."]],"metalografia":[["O que a FISPQ informa?","Riscos e cuidados para o uso do produto químico","Apenas o preço do reagente","A cor da bancada","A velocidade da máquina","A ficha de segurança orienta sobre perigos e medidas preventivas."],["Por que não se deve cheirar diretamente um reagente para identificá-lo?","Porque pode haver exposição a vapores perigosos","Porque o cheiro sempre indica segurança","Porque isso substitui a etiqueta","Porque todos os reagentes são inofensivos","A identificação deve ser feita com segurança, consultando a ficha e o rótulo."],["Onde é preferível manusear reagentes quando indicado?","Em local ventilado ou em capela","Em local fechado sem exaustão","Perto de alimentos","Em qualquer lugar sem avaliação","Ventilação ou capela ajuda a reduzir a inalação de vapores."],["Por que identificar os frascos?","Para evitar confusões, misturas e acidentes","Para poder dispensar a ficha de segurança","Para usar qualquer produto","Para descartar sem verificar","A identificação clara é essencial no manuseio químico."],["Como descartar resíduos químicos?","Conforme o procedimento da empresa","Na pia sem avaliação","No lixo comum sempre","No chão da oficina","O descarte deve seguir o procedimento aplicável."],["Quais partículas podem surgir no lixamento e polimento?","Partículas que podem ser inaladas ou atingir os olhos","Somente vapor de água","Nenhuma partícula","Apenas faíscas de soldagem","Lixamento e polimento podem gerar partículas."],["Quando usar os EPIs definidos para o reagente?","Durante as etapas de preparo e ataque das amostras","Só depois de terminar","Apenas se houver fiscalização","Somente para limpar a bancada","A proteção deve acompanhar a exposição durante as etapas."],["Por que escolher luvas adequadas ao reagente?","Porque a compatibilidade depende do produto químico","Porque todas as luvas protegem contra qualquer químico","Para substituir a ventilação","Para evitar identificar o frasco","A luva deve ser compatível com o produto manuseado."],["O que fazer antes de misturar ou usar produtos?","Consultar a ficha de segurança e as orientações aplicáveis","Misturar para descobrir a reação","Cheirar o produto","Usar frasco sem rótulo","A consulta prévia ajuda a reconhecer riscos e incompatibilidades."],["Qual prática é insegura no laboratório?","Usar reagente sem identificação","Ler a ficha de segurança","Usar ventilação adequada","Identificar os recipientes","Recipientes sem identificação podem causar uso incorreto e acidentes."],["Por que manter os resíduos separados e identificados conforme orientação?","Para facilitar o descarte correto e evitar misturas perigosas","Para misturar todos os produtos","Para jogar tudo na pia","Para dispensar o procedimento da empresa","A segregação e identificação apoiam o gerenciamento seguro dos resíduos."]],"costura":[["Qual é um risco comum na costura?","Perfuração por agulha","Radiação do arco elétrico","Projeção de cavacos metálicos","Exposição a fluido de corte como único risco","A agulha pode perfurar e causar ferimentos."],["Por que desligar a máquina para trocar a agulha?","Para evitar acionamento inesperado","Para aumentar a velocidade","Para deixar a agulha em movimento","Para dispensar a proteção","A máquina ligada pode movimentar a agulha inesperadamente."],["O que fazer com as proteções da máquina?","Mantê-las no lugar","Retirá-las para ganhar tempo","Usá-las só quando a máquina é nova","Guardá-las durante a costura","As proteções reduzem o contato com partes perigosas."],["Como reduzir o risco de corte com tesoura?","Usar a ferramenta apropriada e guardá-la após o uso","Deixá-la aberta sobre a máquina","Usar qualquer objeto cortante","Passá-la de qualquer maneira","Ferramentas adequadas e guardadas reduzem cortes."],["Como reduzir o esforço repetitivo?","Manter postura adequada e fazer as pausas previstas","Ignorar desconforto","Trabalhar sem pausas","Aumentar o ritmo continuamente","Postura e pausas ajudam a reduzir sobrecarga."],["Qual EPI pode ser indicado ao usar máquina de corte?","Luva contra corte, quando prevista na avaliação de riscos","Qualquer luva perto de qualquer agulha","Somente protetor auricular em toda tarefa","Nenhum EPI em qualquer situação","Os EPIs dependem da avaliação de riscos e da tarefa."],["Quando passar a linha na máquina?","Com a máquina desligada","Com a máquina funcionando","Com o pedal pressionado","Enquanto a agulha se movimenta","Desligar evita acionamento acidental."],["O que fazer depois de usar a tesoura?","Guardá-la em local apropriado","Deixá-la aberta na borda da mesa","Escondê-la sob o tecido","Deixá-la no chão","Guardar a ferramenta reduz o risco de cortes."],["Qual risco pode estar associado à poeira de tecido?","Exposição a partículas no ambiente","Arco elétrico","Peça metálica em rotação","Reagentes químicos sempre presentes","Poeira de tecido aparece entre os riscos indicados."],["Por que manter a área de trabalho organizada?","Para reduzir incidentes e facilitar o trabalho","Para deixar ferramentas espalhadas","Para dificultar a movimentação","Para manter a tesoura aberta na mesa","A organização contribui para a segurança."],["O que fazer ao sentir desconforto por repetição?","Respeitar as pausas previstas e comunicar conforme orientação local","Ignorar e acelerar","Eliminar todas as pausas","Alterar a máquina sem autorização","Pausas e postura adequada ajudam a prevenir lesões."]],"marcenaria":[["Qual risco está associado à marcenaria?","Cortes e projeção de partículas","Somente radiação UV","Apenas perfuração por agulha","Nenhum risco de máquina","Máquinas de corte podem causar cortes e projetar partículas."],["O que verificar antes de ligar a máquina?","Proteções e lâminas","Apenas a aparência externa","Se a proteção foi removida","Nada, basta ligar","Proteções e lâminas precisam estar em condição segura."],["Para que serve o empurrador?","Manter as mãos afastadas da lâmina ao conduzir peças","Aumentar a poeira","Substituir a proteção da máquina","Segurar a lâmina durante o corte","O empurrador ajuda a manter as mãos longe da zona de corte."],["Como controlar a serragem?","Manter a exaustão ligada e a serragem limpa","Deixar acumular","Soprar o pó para o ar","Desligar a exaustão durante o corte","A exaustão reduz o pó suspenso no ambiente."],["Por que evitar mangas soltas em partes giratórias?","Podem ser puxadas pela máquina","Protegem contra todos os cortes","Diminuem o ruído","Substituem os óculos","Roupas soltas podem se enroscar."],["Qual EPI ajuda a proteger os olhos?","Óculos de proteção","Protetor auricular","Botina como única proteção ocular","Luva de tecido","Óculos protegem contra partículas projetadas."],["O protetor auricular ajuda a controlar qual risco?","Ruído","Serragem nos olhos","Corte nas mãos","Peça solta","Ruído é um dos riscos da marcenaria."],["O que fazer se a lâmina estiver danificada?","Não operar até a condição ser corrigida","Continuar devagar","Retirar a proteção","Segurar a peça com a mão perto da lâmina","Lâminas danificadas aumentam o risco de acidente."],["Quando usar luvas em máquinas com partes giratórias?","Não usar luvas ou mangas soltas quando puderem ser puxadas; seguir a avaliação da tarefa","Sempre usar luvas soltas","Usar luvas para segurar a lâmina","Usar luvas como substituto da proteção","Luvas podem criar risco de enroscamento em partes giratórias."],["Por que manter a serragem limpa?","Para reduzir acúmulo de pó e manter a área segura","Para espalhar pó no ambiente","Para bloquear a exaustão","Para cobrir ferramentas","A limpeza e a exaustão ajudam a controlar a serragem."],["Como cortar peças pequenas com mais segurança?","Usar empurrador ou gabarito apropriado","Aproximar os dedos da lâmina","Retirar as proteções","Segurar a peça junto à lâmina","Empurradores e gabaritos ajudam a manter distância da lâmina."]],"eletrica":[["Qual é um risco do trabalho com eletricidade?","Choque elétrico e arco elétrico","Somente ruído de tecido","Apenas poeira de madeira","Nenhum risco após desligar o interruptor","Choque e arco elétrico são riscos destacados."],["Quem pode realizar intervenção em circuitos?","Profissionais habilitados e autorizados","Qualquer pessoa disponível","Um aprendiz sozinho","Visitantes da área","A intervenção exige capacitação e autorização específicas."],["Qual sequência básica deve ser seguida antes de intervir?","Desenergizar, bloquear e sinalizar o circuito","Apenas avisar um colega","Manter o circuito energizado","Retirar a sinalização","A sequência reduz o risco de energização acidental."],["O que confirmar antes de tocar nos condutores?","A ausência de tensão","Que alguém disse que está desligado","Que o disjuntor parece desligado, sem medir","Que a intervenção será rápida","É necessário confirmar a ausência de tensão."],["Como devem estar as ferramentas usadas na intervenção?","Isoladas e em bom estado","Com cabos danificados","Sem isolamento","Qualquer ferramenta metálica","Ferramentas isoladas e íntegras reduzem riscos."],["Qual norma é citada no contexto do treinamento elétrico?","NR-10","NR-6 como única referência citada","Nenhuma norma","Uma norma de costura","O material indica capacitação específica conforme a NR-10."],["Para que serve bloquear o circuito?","Para evitar que seja energizado acidentalmente","Para aumentar a tensão","Para dispensar a sinalização","Para permitir acesso de pessoas não autorizadas","O bloqueio ajuda a impedir religamento inesperado."],["Por que sinalizar o circuito durante a intervenção?","Para alertar e impedir ações indevidas de outras pessoas","Para substituir a confirmação de ausência de tensão","Para indicar que o circuito está seguro sem testes","Para permitir que qualquer pessoa opere","A sinalização complementa as medidas de controle."],["Quais EPIs podem ser necessários?","EPIs específicos, como luvas isolantes e calçado adequado, definidos pela avaliação de riscos","Apenas luvas de tecido","Máscara de solda em todas as tarefas","Nenhum EPI","A escolha depende da avaliação de riscos elétricos."],["O que fazer se uma ferramenta isolada estiver danificada?","Não utilizá-la e seguir o procedimento da empresa","Usá-la apenas por pouco tempo","Cobrir com papel e continuar","Emprestá-la sem informar","O isolamento danificado pode deixar de proteger adequadamente."],["É seguro tocar em um condutor só porque alguém disse que desligou o circuito?","Não; é preciso confirmar a ausência de tensão","Sim, sempre","Sim, se o trabalho for rápido","Sim, se estiver usando qualquer luva","A ausência de tensão deve ser confirmada antes de tocar nos condutores."]]};
+for(const [k,a] of Object.entries(T))a.q=[...a.q,...Q_EXTRA[k]];
+for(const k of Object.keys(T)){try{localStorage.removeItem('res_'+k)}catch(e){}}
+const raiz=document.documentElement,PCT=[87.5,100,112.5,125,137.5];let ti=1,areaAtual=null,sorteio=[];
+const guardar=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},ler=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const calmo=()=>matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth';
+const gaveta=$('gaveta'),veu=$('veu'),dlg=$('dlgSobre'),aaP=$('acessP');
+
+
+function abasDe(c,fn){const b=[...c.querySelectorAll('[role=tab]')];
+  const sel=(i,f)=>{b.forEach((x,j)=>{x.setAttribute('aria-selected',j===i);x.tabIndex=j===i?0:-1});if(f)b[i].focus();fn(b[i].dataset.t)};
+  b.forEach((x,i)=>{x.addEventListener('click',()=>sel(i));x.addEventListener('keydown',e=>{const n={ArrowRight:(i+1)%b.length,ArrowLeft:(i-1+b.length)%b.length,Home:0,End:b.length-1}[e.key];if(n!==undefined){e.preventDefault();sel(n,true)}})});
+  return t=>{const i=b.findIndex(x=>x.dataset.t===t);if(i>=0)sel(i)}}
+const selAba=abasDe($('abasArea'),t=>{$('tpConteudo').classList.toggle('on',t==='conteudo');$('tpPerg').classList.toggle('on',t==='perguntas')});
+
+
+function tamanho(i){ti=Math.max(0,Math.min(PCT.length-1,i));raiz.style.fontSize=PCT[ti]+'%';guardar('tam',ti);$('aMenos').disabled=ti===0;$('aMais').disabled=ti===PCT.length-1}
+function contraste(on){raiz.classList.toggle('contraste',on);$('btnContraste').setAttribute('aria-pressed',on);guardar('contraste',on?'1':'0')}
+function aa(on){aaP.classList.toggle('hidden',!on);$('btnAa').setAttribute('aria-expanded',on)}
+function menu(on){gaveta.classList.toggle('aberta',on);gaveta.inert=!on;veu.classList.toggle('hidden',!on);$('btnMenu').setAttribute('aria-expanded',on);document.body.classList.toggle('trava',on);if(on)gaveta.querySelector('a').focus()}
+
+
+function montarHome(){$('tiles').innerHTML=Object.entries(T).map(([k,a])=>`<a class="tile" href="#${k}" data-go="${k}"><i>${a.ic}</i><strong>${a.nome}</strong><span class="st">15 perguntas</span></a>`).join('')}
+gaveta.insertAdjacentHTML('beforeend','<a href="#inicio" data-go="inicio">Todos os treinamentos</a>'+Object.entries(T).map(([k,a])=>`<a href="#${k}" data-go="${k}">${a.nome}</a>`).join('')+'<a href="index.html">Portal Segurança</a><button class="item" id="menuSobre" type="button">Sobre o site</button>');
+function textoContexto(a){return [a.intro,'Durante este trabalho, os principais riscos são '+a.riscos.toLowerCase()+'.','Os equipamentos de proteção indicados para a atividade incluem '+a.epis.toLowerCase()+'.',...a.proc.map(x=>x.endsWith('.')?x:x+'.'),...(a.obs?[a.obs]:[]),'Siga sempre a avaliação de riscos e as orientações de segurança da empresa.'].join('\n\n')}
+function escaparHTML(s){return String(s).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]))}
+function conteudoHTML(a){const paragrafos=textoContexto(a).split('\n\n').map(p=>`<p>${escaparHTML(p)}</p>`).join('');return `<section class="curso-conteudo" aria-labelledby="cursoTitulo"><h2 id="cursoTitulo">Curso</h2><div class="curso-texto" contenteditable="false" spellcheck="false">${paragrafos}</div></section><button class="btn-video" id="irPerg" type="button">Ir para as perguntas →</button>`}
+const embaralhar=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function atualizarProg(){$('prog').textContent='Respondidas: '+document.querySelectorAll('#perg input:checked').length+' de '+sorteio.length}
+function montarPerg(k){
+  sorteio=T[k].q.map(([t,ok,...m])=>{const e=m.pop(),o=embaralhar([ok,...m]);return{t,o,c:o.indexOf(ok),e}});
+  $('perg').innerHTML=sorteio.map((q,i)=>`<div class="perg" role="group" aria-labelledby="qt${i}"><p class="qt" id="qt${i}">${i+1}. ${q.t}</p>${q.o.map((x,j)=>`<label class="op"><input type="radio" name="q${i}" value="${j}"><span>${x}</span></label>`).join('')}</div>`).join('');
+  $('res').classList.add('hidden');$('btnFinal').classList.remove('hidden');$('fimBotoes').classList.add('hidden');atualizarProg();
+}
+function mostrar(id){
+  pararFala(true);menu(false);aa(false);
+  const a=T[id];areaAtual=a?id:null;
+  $('p-home').classList.toggle('on',!a);$('p-area').classList.toggle('on',!!a);
+  document.querySelectorAll('.gaveta a[data-go],.abas-baixo a[data-go]').forEach(x=>x.dataset.go===(a?id:'inicio')?x.setAttribute('aria-current','page'):x.removeAttribute('aria-current'));
+  if(a){$('aNome').textContent=a.nome;$('tpConteudo').innerHTML=conteudoHTML(a);montarPerg(id);selAba('conteudo')}else montarHome();
+  document.title=(a?a.nome+' — ':'')+'Treinamentos — Portal Segurança';scrollTo(0,0);
+}
+function irPara(id){try{if(location.hash!=='#'+id)history.pushState(null,'','#'+id)}catch(e){location.hash=id;return}mostrar(id)}
+const irAba=t=>{selAba(t);$('abasArea').scrollIntoView({behavior:calmo(),block:'start'})};
+
+
+$('perg').addEventListener('change',atualizarProg);
+$('btnFinal').addEventListener('click',()=>{
+  const gs=[...document.querySelectorAll('#perg .perg')],n=sorteio.length;
+  const marc=sorteio.map((q,i)=>{const x=document.querySelector(`#perg input[name="q${i}"]:checked`);return x?+x.value:-1});
+  const falta=marc.indexOf(-1);
+  if(falta>=0){$('prog').textContent='Responda todas as perguntas para finalizar. Falta a pergunta '+(falta+1)+'.';gs[falta].scrollIntoView({block:'center',behavior:calmo()});return}
+  let ac=0;
+  sorteio.forEach((q,i)=>{const ok=marc[i]===q.c;if(ok)ac++;
+    gs[i].querySelectorAll('.op').forEach((l,j)=>{l.querySelector('input').disabled=true;if(j===q.c)l.classList.add('certa');else if(j===marc[i])l.classList.add('errada')});
+    gs[i].insertAdjacentHTML('beforeend',`<p class="gab"><strong>${ok?'Resposta correta.':'Resposta incorreta.'}</strong> Resposta correta: ${q.o[q.c]}. ${q.e}</p>`)});
+  const pct=Math.round(ac/n*100);
+  $('resBig').textContent=ac+' de '+n+' ('+pct+'%)';$('resBar').style.width=pct+'%';
+  $('resMsg').textContent=pct===100?'Todas as respostas estão corretas.':'Revise o conteúdo e as respostas indicadas abaixo.';
+  $('res').classList.remove('hidden');$('btnFinal').classList.add('hidden');$('fimBotoes').classList.remove('hidden');$('prog').textContent='';
+  $('res').focus({preventScroll:true});$('abasArea').scrollIntoView({behavior:calmo(),block:'start'});
+});
+$('btnRefazer').addEventListener('click',()=>{montarPerg(areaAtual);$('abasArea').scrollIntoView({behavior:calmo(),block:'start'})});
+$('btnRevisar').addEventListener('click',()=>irAba('conteudo'));
+$('tpConteudo').addEventListener('click',e=>{if(e.target.id==='irPerg')irAba('perguntas')});
+
+
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition,TTS=window.speechSynthesis;
+const vozFab=$('vozFab'),vozP=$('vozP'),vozSt=$('vozSt');
+let ouvindo=null,falando=false,vozPt=null,leitura=0,tT;
+const vozAberta=()=>!vozP.classList.contains('hidden');
+function vozAbrir(on){vozP.classList.toggle('hidden',!on);vozFab.setAttribute('aria-expanded',on);if(on)$('vozFalar').focus()}
+function st(t){vozSt.textContent=t;if(!vozAberta()){const x=$('vozToast');x.textContent=t;x.classList.remove('hidden');clearTimeout(tT);tT=setTimeout(()=>x.classList.add('hidden'),4500)}}
+function ui(){$('vozOuvirT').textContent=falando?'Parar leitura':'Ouvir esta página';$('vozOuvirI').textContent=falando?'⏹':'🔊';$('vozFalarT').textContent=ouvindo?'Ouvindo… toque para cancelar':'Falar um comando';vozFab.classList.toggle('ouvindo',!!ouvindo)}
+function escolherVoz(){if(!TTS)return;const v=TTS.getVoices();vozPt=v.find(x=>/^pt[-_]br/i.test(x.lang))||v.find(x=>/^pt/i.test(x.lang))||null}
+if(TTS){escolherVoz();TTS.addEventListener&&TTS.addEventListener('voiceschanged',escolherVoz)}
+function textoLeitura(){return document.querySelector('.pagina.on').innerText.replace(/[\p{Extended_Pictographic}\u2190-\u21FF\u2713\u25B6\u2212]/gu,' ').replace(/\s*\n\s*/g,'. ').replace(/([.!?:;])\s*\./g,'$1').replace(/\s+/g,' ').trim()}
+function pedacos(t){const fr=t.match(/[^.!?]+[.!?]*/g)||[t],out=[];let c='';fr.forEach(f=>{if(c&&(c+f).length>220){out.push(c.trim());c=''}c+=f+' '});if(c.trim())out.push(c.trim());return out}
+function lerPagina(){
+  if(!TTS){st('Este navegador não tem leitura em voz alta. Use o Chrome, o Edge ou o Safari.');return}
+  pararFala(true);const ps=pedacos(textoLeitura());if(!ps.length)return;
+  const id=++leitura;falando=true;ui();
+  st(vozPt?'Lendo em voz alta…':'Nenhuma voz em português foi encontrada neste aparelho: a leitura pode sair em outro idioma.');
+  ps.forEach((p,i)=>{const u=new SpeechSynthesisUtterance(p);u.lang='pt-BR';if(vozPt)u.voice=vozPt;
+    u.onend=()=>{if(id===leitura&&i===ps.length-1){falando=false;ui();st('Leitura concluída.')}};
+    u.onerror=ev=>{if(id===leitura&&ev.error!=='canceled'&&ev.error!=='interrupted'){falando=false;ui();st('Não foi possível ler em voz alta.')}};
+    TTS.speak(u)});
+}
+function pararFala(quieto){leitura++;if(TTS)TTS.cancel();const era=falando;falando=false;ui();if(!quieto&&era)st('Leitura parada.')}
+
+const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+const tem=(t,l)=>l.some(w=>(' '+t+' ').includes(' '+w+' '));
+const AREA_PAL={soldagem:['soldagem','solda'],mecanica:['mecanica'],usinagem:['usinagem'],tornearia:['tornearia','torno'],metalografia:['metalografia'],costura:['costura'],marcenaria:['marcenaria'],eletrica:['eletrica']};
+const AJUDA='Diga: o nome de uma área (soldagem, elétrica…), conteúdo, perguntas, voltar, ler, parar, aumentar, diminuir, contraste ou libras.';
+function executar(t){
+  if(tem(t,['parar','pare','silencio'])){pararFala();return true}
+  if(tem(t,['ler','leia','ouvir','ouca'])){lerPagina();return true}
+  if(tem(t,['aumentar','ampliar','maior'])){tamanho(ti+1);return true}
+  if(tem(t,['diminuir','reduzir','menor'])){tamanho(ti-1);return true}
+  if(tem(t,['contraste'])){contraste(!raiz.classList.contains('contraste'));return true}
+  if(tem(t,['menu','categorias'])){menu(true);return true}
+  if(tem(t,['libras','vlibras','v libras'])){abrirLibras();return true}
+  if(tem(t,['ajuda','comandos'])){st(AJUDA);return 'manter'}
+  if(tem(t,['sobre'])){dlg.showModal();return true}
+  for(const [k,p] of Object.entries(AREA_PAL))if(tem(t,p)){irPara(k);return true}
+  if(areaAtual){if(tem(t,['conteudo','texto'])){irAba('conteudo');return true}if(tem(t,['perguntas','avaliacao','questoes','prova'])){irAba('perguntas');return true}}
+  if(tem(t,['voltar','inicio','treinamentos','areas'])){irPara('inicio');return true}
+  return false;
+}
+
+function comando(alts){
+  for(const bruto of alts){const r=executar(norm(bruto));if(r){st('Entendi: “'+bruto.trim()+'”.');if(r!=='manter')vozAbrir(false);return}}
+  st('Não entendi “'+alts[0].trim()+'”. Diga, por exemplo: “soldagem” ou “perguntas”.');
+}
+function ouvirVoz(cb){
+  if(!SR){st('O comando por voz não funciona neste navegador. Use o Chrome ou o Edge.');return}
+  if(ouvindo){ouvindo.abort();return}
+  pararFala(true);const r=new SR();r.lang='pt-BR';r.interimResults=false;r.maxAlternatives=4;
+  r.onstart=()=>{ouvindo=r;ui();st('Ouvindo… fale agora.')};
+  r.onresult=e=>cb([...e.results[0]].map(a=>a.transcript));
+  r.onerror=e=>{const m={'not-allowed':'Permita o uso do microfone no navegador.','service-not-allowed':'Permita o uso do microfone no navegador.','no-speech':'Não ouvi nada. Toque e fale novamente.','audio-capture':'Nenhum microfone foi encontrado.','network':'O reconhecimento de voz precisa de internet.'};if(e.error!=='aborted')st(m[e.error]||'Não foi possível ouvir. Tente novamente.')};
+  r.onend=()=>{ouvindo=null;ui()};
+  try{r.start()}catch(e){ouvindo=null;ui();st('Não foi possível iniciar o microfone.')}
+}
+
+
+let vlibrasPromise=null,vlibrasPronto=false;
+function abrirLibras(){
+  const botao=document.querySelector('[vw-access-button]');
+  if(vlibrasPronto&&window.VLibras&&botao){botao.click();st('Assistente de Libras aberto.');return}
+  if(vlibrasPromise){st('O assistente de Libras está carregando.');return}
+  st('Carregando assistente de Libras…');
+  vlibrasPromise=new Promise((resolve,reject)=>{
+    const script=document.createElement('script');
+    script.src='https://vlibras.gov.br/app/vlibras-plugin.js';
+    script.async=true;
+    script.onload=()=>{try{new window.VLibras.Widget('https://vlibras.gov.br/app');vlibrasPronto=true;resolve()}catch(e){reject(e)}};
+    script.onerror=()=>reject(new Error('Falha ao carregar VLibras'));
+    document.body.appendChild(script);
+  }).then(()=>{
+    const b=document.querySelector('[vw-access-button]');
+    if(!b)throw new Error('Botão do VLibras indisponível');
+    b.click();st('Assistente de Libras aberto.');
+  }).catch(()=>{vlibrasPronto=false;vlibrasPromise=null;st('Não foi possível carregar o VLibras. Verifique a internet e tente novamente.');});
+}
+const siennaNos=[];let siennaVisivel=false;
+const ehNosso=n=>n.matches('script,style,link,dialog,main,header,footer,nav,aside,section,a.skip,[vw],[class*="vw"],[class*="vlibras"],[id*="vlibras"],.veu,.voz-toast')||!!n.closest('[vw]');
+new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1&&!ehNosso(n)&&!siennaNos.includes(n)){siennaNos.push(n);if(!siennaVisivel)n.classList.add('sienna-oculto')}}))).observe(document.body,{childList:true});
+function siennaMostrar(on){siennaVisivel=on;siennaNos.forEach(n=>n.classList.toggle('sienna-oculto',!on));const b=$('btnSienna');b.setAttribute('aria-pressed',on);b.textContent=on?'Ocultar Sienna':'Abrir Sienna';if(on)st('Toque no botão do Sienna para abrir as opções.')}
+$('btnSienna').addEventListener('click',()=>{if(!siennaNos.length&&!siennaVisivel){st('O Sienna ainda está carregando ou não pôde ser carregado (precisa de internet).');return}siennaMostrar(!siennaVisivel);aa(false)});
+
+
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-go]');if(a){e.preventDefault();irPara(a.dataset.go)}
+  if(vozAberta()&&!vozP.contains(e.target)&&!vozFab.contains(e.target))vozAbrir(false);
+  if(!aaP.contains(e.target)&&e.target!==$('btnAa'))aa(false);
+});
+addEventListener('hashchange',()=>mostrar(location.hash.slice(1)));
+$('btnMenu').addEventListener('click',()=>menu(true));$('btnFecharMenu').addEventListener('click',()=>{menu(false);$('btnMenu').focus()});veu.addEventListener('click',()=>menu(false));
+$('btnAa').addEventListener('click',e=>{e.stopPropagation();aa(aaP.classList.contains('hidden'))});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape'||dlg.open)return;if(vozAberta()){vozAbrir(false);vozFab.focus()}else if(gaveta.classList.contains('aberta')){menu(false);$('btnMenu').focus()}else if(!aaP.classList.contains('hidden')){aa(false);$('btnAa').focus()}});
+vozFab.addEventListener('click',()=>vozAbrir(!vozAberta()));$('vozX').addEventListener('click',()=>{vozAbrir(false);vozFab.focus()});
+$('vozFalar').addEventListener('click',()=>ouvirVoz(comando));$('vozOuvir').addEventListener('click',()=>falando?pararFala():lerPagina());
+$('vozLibras').addEventListener('click',()=>{abrirLibras();vozAbrir(false)});
+document.querySelectorAll('.voz-chips button').forEach(b=>b.addEventListener('click',()=>comando([b.dataset.c])));
+['btnSobre','menuSobre'].forEach(i=>$(i).addEventListener('click',()=>{menu(false);dlg.showModal()}));
+$('btnFecharSobre').addEventListener('click',()=>dlg.close());dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+$('aMenos').addEventListener('click',()=>tamanho(ti-1));$('aMais').addEventListener('click',()=>tamanho(ti+1));$('aPadrao').addEventListener('click',()=>tamanho(1));
+$('btnContraste').addEventListener('click',()=>contraste(!raiz.classList.contains('contraste')));
+$('skip').addEventListener('click',e=>{e.preventDefault();const c=$('conteudo');c.setAttribute('tabindex','-1');c.focus()});
+$('btnTopo').addEventListener('click',()=>scrollTo({top:0,behavior:calmo()}));
+const t0=parseInt(ler('tam'),10);tamanho(isNaN(t0)?1:t0);contraste(ler('contraste')==='1');mostrar(location.hash.slice(1));
+</script>
+<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+</body>
+</html>
